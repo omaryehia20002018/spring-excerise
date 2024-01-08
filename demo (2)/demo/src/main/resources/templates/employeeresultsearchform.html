@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    table,th,td{
+          border:1px solid
+
+        }
+        table{
+           width:100%;
+           border-collapse:collapse;
+        }
+  </style>
+</head>
+<body>
+     <table >
+       <thead>
+       <tr>
+         <th>Employee name</th>
+         <th>Employee code</th>
+         <th>Employee address</th>
+         <th>Employee salary</th>
+         <th>Employee mobile</th>
+         <th>Employee birthdate</th>
+         <th>Department name</th>
+         <th>Department code</th>
+         <th>Employee description</th>
+       </tr>
+       </thead>
+       <tbody th:object="${employeeresult}">
+       <td th:text="${employeeresult.name}">
+
+       </td>
+
+       <td  th:text="${employeeresult.code}">
+
+       </td>
+
+       <td  th:text="${employeeresult.address}">
+
+       </td>
+
+       <td  th:text="${employeeresult.salary}">
+
+       </td>
+
+       <td  th:text="${employeeresult.mobile}">
+
+       </td>
+
+       <td  th:text="${employeeresult.birthofdate}">
+
+       </td>
+
+       <td  th:text="${employeeresult.department.name}">
+
+       </td>
+
+       <td th:text="${employeeresult.department.code}">
+
+       </td>
+
+       <td th:text="${employeeresult.department.description}">
+
+       </td>
+
+
+       </tr>
+       </tbody>
+
+     </table>
+</body>
+</html>

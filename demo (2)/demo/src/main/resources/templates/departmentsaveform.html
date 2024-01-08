@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title> department registeration form</title>
+    <style>
+        .error{
+          color:red
+        }
+    </style>
+</head>
+<body>
+
+   <form action="#" th:action="@{/api/department/saveform}" th:object="${department}" method="GET">
+       Department name: <input type="text" th:field="*{name}" placeholder="enter Department name"/>
+          <span th:if="${#fields.hasErrors('name')}"
+                th:errors="*{name}"
+                class="error"
+          >
+
+          </span>
+       <br><br>
+       Department code: <input type="text" th:field="*{code}" placeholder="enter Department code"/>
+
+       <span th:if="${#fields.hasErrors('code')}"
+            th:errors="*{code}"
+             class="error"
+       >
+            </span>
+         <br><br>
+       Description:<input type="text" th:field="*{description}" placeholder="enter Department Description"/>
+           <span th:if="${#fields.hasErrors('description')}"
+                 th:errors="*{description}"
+                 class="error"
+           >
+                </span>
+       <br><br>
+       <button type="submit">
+           save
+       </button>
+   </form>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Registration form</title>
+    <style>
+        .error{
+          color:red
+        }
+    </style>
+</head>
+<body>
+<form action="#" th:action="@{/api/employee/saveform}" th:object="${employee}" method="GET">
+    Name: <input type="text" th:field="*{name}" placeholder="enter Employee name"/>
+    <span th:if="${#fields.hasErrors('name')}"
+          th:errors="*{name}"
+          class="error"
+    >
+            </span>
+    <br><br>
+    Code: <input type="text" th:field="*{code}" placeholder="enter Employee code"/>
+    <span th:if="${#fields.hasErrors('code')}"
+          th:errors="*{code}"
+          class="error"
+    >
+            </span>
+    <br><br>
+    Birthofdate : <input type="text" th:field="*{birthofdate}" placeholder="enter Employee birthofdate"/>
+    <span th:if="${#fields.hasErrors('birthofdate')}"
+          th:errors="*{birthofdate}"
+          class="error"
+    >
+            </span>
+    <br><br>
+    Address: <input type="text" th:field="*{address}" placeholder="enter Employee address"/>
+    <span th:if="${#fields.hasErrors('address')}"
+          th:errors="*{address}"
+          class="error"
+    >
+            </span>
+    <br><br>
+    Mobile: <input type="text" th:field="*{mobile}" placeholder="enter Employee mobile"/>
+    <span th:if="${#fields.hasErrors('mobile')}"
+          th:errors="*{mobile}"
+          class="error"
+    >
+            </span>
+    <br><br>
+    Salary: <input type="text" th:field="*{salary}" placeholder="enter Employee salary"/>
+    <span th:if="${#fields.hasErrors('salary')}"
+          th:errors="*{salary}"
+          class="error"
+    >
+            </span>
+    <br><br>
+
+        Department name: <input type="text" th:field="*{department.name}" placeholder="enter the Department name"/>
+
+        <span
+                th:if="${#fields.hasErrors('department.name')}"
+                th:errors="*{department.name}"
+                class="error"
+        >
+            </span>
+
+
+
+    <br><br>
+
+    Department code: <input type="text" th:field="*{department.code}" placeholder="enter the Department code"/>
+
+    <span
+            th:if="${#fields.hasErrors('department.code')}"
+            th:errors="*{department.code}"
+            class="error"
+    >
+            </span>
+
+    <br><br>
+    Department description: <input type="text" th:field="*{department.description}" placeholder="enter the department description"/>
+
+    <span
+            th:if="${#fields.hasErrors('department.description')}"
+            th:errors="*{department.description}"
+            class="error"
+    >
+            </span>
+    <br><br>
+    <button type="submit">
+        save
+    </button>
+</form>
+</body>
+</html>
